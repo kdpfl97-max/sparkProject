@@ -1,13 +1,18 @@
 # dependencies
 /node_modules
+**/node_modules
 
 # next
 /.next
 /.next-*
+**/.next
+**/.next-*
 /out
+**/out
 
 # production
 /build
+**/build
 
 # misc
 .DS_Store
@@ -23,5 +28,7 @@ yarn-error.log*
 
 # local cache
 .npm-cache
+**/.npm-cache
 .vercel-cli-*
+**/.vercel-cli-*
 *.log

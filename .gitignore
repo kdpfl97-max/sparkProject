@@ -25,3 +25,5 @@ yarn-error.log*
 .npm-cache
 .vercel-cli-*
 *.log
+
+.vercel

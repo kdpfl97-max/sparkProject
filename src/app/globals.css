@@ -54,6 +54,47 @@ button {
   cursor: pointer;
 }
 
+a[class~="bg-spark-lime"],
+button[class~="bg-spark-lime"],
+span[class~="bg-spark-lime"] {
+  color: #070707;
+}
+
+a[class~="bg-spark-purple"],
+button[class~="bg-spark-purple"],
+span[class~="bg-spark-purple"] {
+  color: #ffffff;
+}
+
+a[class~="bg-black"],
+button[class~="bg-black"],
+span[class~="bg-black"] {
+  color: #ffffff;
+}
+
+a[class~="bg-white"],
+button[class~="bg-white"],
+span[class~="bg-white"] {
+  color: #070707;
+}
+
+button:disabled,
+a[aria-disabled="true"] {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: rgba(255, 255, 255, 0.58) !important;
+  box-shadow: none !important;
+}
+
+.contrast-button-dark {
+  background: #070707;
+  color: #ffffff;
+}
+
+.contrast-button-light {
+  background: #dfff4c;
+  color: #070707;
+}
+
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;

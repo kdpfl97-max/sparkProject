@@ -58,8 +58,8 @@ export default function ProfilePage() {
         <div className="rounded-[23px] bg-[linear-gradient(135deg,#dfff4c_0%,#f3effe_54%,#8e6ecf_100%)] p-3.5">
           <div className="flex items-start justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
-              <div className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-[20px] bg-black/12 shadow-[0_12px_28px_rgba(0,0,0,0.18)]">
-                <SparkCharacter level={CURRENT_SPARK_LEVEL} size={64} priority />
+              <div className="grid size-[88px] shrink-0 place-items-center overflow-hidden rounded-[22px] bg-black/12 shadow-[0_12px_28px_rgba(0,0,0,0.18)]">
+                <SparkCharacter level={CURRENT_SPARK_LEVEL} size={88} priority />
               </div>
               <div className="min-w-0">
                 <p className="text-[11px] font-black text-black/55">MY SPARK</p>

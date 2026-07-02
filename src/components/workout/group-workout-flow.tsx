@@ -365,7 +365,7 @@ function GroupSummary({ role, group, members, seconds, onReset }: { role: Role; 
   return (
     <main className="space-y-4 pb-4 pt-1 text-white">
       <section className="rounded-[24px] bg-spark-lime p-4 text-black">
-        <div className="flex items-start justify-between gap-2"><div><p className="text-[10px] font-black">GROUP COMPLETE</p><h1 className="mt-1 text-[23px] font-black">함께한 SPARK 완료!</h1><p className="mt-1 text-xs font-bold text-black/58">{role === "host" ? "모임 운동을 안전하게 마쳤어요." : "내 모임 운동 기록이 완성됐어요."}</p></div><div className="grid size-[76px] shrink-0 place-items-center"><SparkCharacter level={CURRENT_SPARK_LEVEL} state="complete" size={76} /></div></div>
+        <div className="flex items-start justify-between gap-2"><div><p className="text-[10px] font-black">GROUP COMPLETE</p><h1 className="mt-1 text-[23px] font-black">함께한 SPARK 완료!</h1><p className="mt-1 text-xs font-bold text-black/58">{role === "host" ? "모임 운동을 안전하게 마쳤어요." : "내 모임 운동 기록이 완성됐어요."}</p></div><div className="grid size-[110px] shrink-0 place-items-center"><SparkCharacter level={CURRENT_SPARK_LEVEL} state="complete" size={110} /></div></div>
       </section>
       <section className="rounded-[22px] border border-white/10 bg-card p-3.5">
         <p className="text-[10px] font-black text-spark-lime">{group.activity}</p><h2 className="mt-1 text-base font-black">{group.title}</h2>

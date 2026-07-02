@@ -95,8 +95,8 @@ export default function HomePage() {
             <h2 className="mt-1.5 text-xl font-black leading-none">{health.streakDays || 8}일째 도전 중</h2>
             <p className="mt-1.5 text-[11px] font-bold text-black/62">오늘 루틴도 거의 완료했어요.</p>
           </div>
-          <div className="relative flex w-[78px] shrink-0 flex-col items-center">
-            <SparkCharacter level={CURRENT_SPARK_LEVEL} size={70} priority />
+          <div className="relative -my-2 flex w-[104px] shrink-0 flex-col items-center">
+            <SparkCharacter level={CURRENT_SPARK_LEVEL} size={96} priority />
             <span className="-mt-1 rounded-full bg-black px-2 py-1 text-[9px] font-black text-spark-lime">
               {getSparkLevelName(CURRENT_SPARK_LEVEL)}
             </span>

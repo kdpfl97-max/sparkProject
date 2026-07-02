@@ -192,7 +192,7 @@ export function SoloWorkoutFlow({ initialActivity }: { initialActivity?: string 
       </section>
 
       <section className="flex items-center gap-3 rounded-[20px] border border-white/8 bg-white/[0.04] px-3 py-2">
-        <SparkCharacter level={1} state="default" size={58} />
+        <SparkCharacter level={1} state="default" size={86} />
         <div>
           <p className="text-xs font-black">꼬마 불씨가 준비됐어요</p>
           <p className="mt-1 text-[10px] font-bold text-white/42">안전하게 몸을 풀고 함께 출발해요.</p>
@@ -218,8 +218,8 @@ export function SoloWorkoutFlow({ initialActivity }: { initialActivity?: string 
 function Countdown({ activity, count, onCancel }: { activity: Activity; count: number; onCancel: () => void }) {
   return (
     <main className="flex min-h-full flex-col items-center justify-center pb-24 text-white">
-      <div className="grid size-28 place-items-center rounded-[32px] bg-spark-lime/10 shadow-[0_0_42px_rgba(223,255,76,0.2)]">
-        <SparkCharacter level={1} state="workout" size={108} priority />
+      <div className="grid size-36 place-items-center rounded-[36px] bg-spark-lime/10 shadow-[0_0_52px_rgba(223,255,76,0.24)]">
+        <SparkCharacter level={1} state="workout" size={140} priority />
       </div>
       <p className="mt-6 text-sm font-black text-white/55">{activity.label} 준비</p>
       <p className="mt-2 text-[84px] font-black leading-none text-spark-lime">{count || "GO"}</p>
@@ -268,7 +268,7 @@ function LiveWorkout({
         </div>
         {paused && (
           <div className="mt-4 flex items-center gap-3 rounded-[18px] border border-white/8 bg-white/[0.04] px-3 py-2">
-            <SparkCharacter level={1} state="paused" size={62} />
+            <SparkCharacter level={1} state="paused" size={90} />
             <div>
               <p className="text-xs font-black">잠깐 숨을 고르는 중</p>
               <p className="mt-0.5 text-[10px] font-bold text-white/42">물을 마시고 준비되면 다시 시작해요.</p>
@@ -320,8 +320,8 @@ function WorkoutSummary({ activity, seconds, saved, onSave, onReset }: {
             <h1 className="mt-1 text-[24px] font-black">오늘의 SPARK 완료!</h1>
             <p className="mt-1 text-xs font-bold text-black/58">{activity.label} 기록이 완성됐어요.</p>
           </div>
-          <div className="grid size-[76px] shrink-0 place-items-center">
-            <SparkCharacter level={1} state="complete" size={76} />
+          <div className="grid size-[110px] shrink-0 place-items-center">
+            <SparkCharacter level={1} state="complete" size={110} />
           </div>
         </div>
       </section>

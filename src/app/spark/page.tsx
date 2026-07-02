@@ -83,7 +83,7 @@ export default function SparkPage() {
           <section>
             <div className="flex items-center justify-between">
               <h2 className="text-base font-black">운동 선택</h2>
-              <Link href="/spark/solo" className="text-[11px] font-black text-spark-lime">
+              <Link href={`/spark/solo?activity=${encodeURIComponent(selected.label)}`} className="text-[11px] font-black text-spark-lime">
                 전체보기
               </Link>
             </div>
@@ -134,7 +134,7 @@ export default function SparkPage() {
             </div>
 
             <Link
-              href="/spark/solo"
+              href={`/spark/solo?activity=${encodeURIComponent(selected.label)}`}
               className="mt-3 flex h-11 items-center justify-center rounded-[17px] bg-spark-lime text-[13px] font-black text-black shadow-[0_0_24px_rgba(223,255,76,0.18)]"
             >
               {selected.label} 시작하기

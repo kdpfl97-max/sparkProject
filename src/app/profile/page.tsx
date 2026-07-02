@@ -11,6 +11,11 @@ import {
   UsersRound,
 } from "lucide-react";
 import { activityLogs, meetups } from "@/shared/data/mock-data";
+import {
+  CURRENT_SPARK_LEVEL,
+  getSparkLevelName,
+  SparkCharacter,
+} from "@/components/character/spark-character";
 
 const stats = [
   { label: "운동 기록", value: `${activityLogs.length + 12}개` },
@@ -53,20 +58,22 @@ export default function ProfilePage() {
         <div className="rounded-[23px] bg-[linear-gradient(135deg,#dfff4c_0%,#f3effe_54%,#8e6ecf_100%)] p-3.5">
           <div className="flex items-start justify-between gap-3">
             <div className="flex min-w-0 items-center gap-3">
-              <div className="grid size-14 shrink-0 place-items-center rounded-[20px] bg-black text-base font-black text-white shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
-                SP
+              <div className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-[20px] bg-black/12 shadow-[0_12px_28px_rgba(0,0,0,0.18)]">
+                <SparkCharacter level={CURRENT_SPARK_LEVEL} size={64} priority />
               </div>
               <div className="min-w-0">
                 <p className="text-[11px] font-black text-black/55">MY SPARK</p>
                 <h2 className="mt-0.5 truncate text-xl font-black leading-tight">스파커 님</h2>
-                <p className="mt-1 text-[11px] font-bold text-black/58">러닝 · 걷기 · 헬스</p>
+                <p className="mt-1 text-[11px] font-bold text-black/58">
+                  {getSparkLevelName(CURRENT_SPARK_LEVEL)} · 러닝
+                </p>
               </div>
             </div>
             <button className="rounded-full bg-black px-3 py-2 text-[11px] font-black text-white">편집</button>
           </div>
 
           <div className="mt-4 grid grid-cols-3 gap-2">
-            <MiniMetric label="레벨" value="LV.15" />
+            <MiniMetric label="SPARK 레벨" value={`LV.${CURRENT_SPARK_LEVEL}`} />
             <MiniMetric label="도전" value="18일째" />
             <MiniMetric label="신뢰도" value="92%" />
           </div>

@@ -24,10 +24,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   const isHome = pathname === "/home";
   const isMapPage = pathname === "/groups";
-  const shouldShowHeader = !isHome && !isMapPage;
+  const isImmersiveWorkout = pathname.startsWith("/spark/solo") || pathname.startsWith("/spark/group");
+  const shouldShowHeader = !isHome && !isMapPage && !isImmersiveWorkout;
 
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-[393px] flex-col overflow-hidden bg-background shadow-2xl ring-1 ring-white/10 sm:my-5 sm:min-h-[852px] sm:rounded-[34px]">
+    <div className="relative mx-auto flex h-dvh min-h-0 w-full max-w-[393px] flex-col overflow-hidden bg-background shadow-2xl ring-1 ring-white/10 sm:my-5 sm:h-[min(852px,calc(100dvh-40px))] sm:rounded-[34px]">
       {shouldShowHeader && (
         <header className="flex h-20 shrink-0 items-end px-4 pb-3">
           <div>
@@ -43,13 +44,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             ? "min-h-0 flex-1 overflow-y-auto pb-24"
             : isMapPage
               ? "min-h-0 flex-1 overflow-hidden"
+              : isImmersiveWorkout
+                ? "min-h-0 flex-1 overflow-y-auto px-4 pb-4"
               : "min-h-0 flex-1 overflow-y-auto px-4 pb-24"
         }
       >
         {children}
       </div>
 
-      <nav className="fixed inset-x-0 bottom-0 z-30 mx-auto w-full max-w-[393px] px-2.5 pb-2.5 sm:bottom-5">
+      {!isImmersiveWorkout && <nav className="absolute inset-x-0 bottom-0 z-30 w-full px-2.5 pb-[max(10px,env(safe-area-inset-bottom))]">
         <div className="grid grid-cols-5 gap-1 rounded-[24px] border border-white/10 bg-black/92 p-1.5 shadow-2xl backdrop-blur-xl">
           {tabs.map((tab) => {
             const Icon = tab.icon;
@@ -73,7 +76,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             );
           })}
         </div>
-      </nav>
+      </nav>}
     </div>
   );
 }

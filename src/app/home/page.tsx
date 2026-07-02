@@ -14,6 +14,11 @@ import {
 } from "lucide-react";
 import { getHomeDashboardData } from "@/shared/data-access/spark-data";
 import type { ActivityLog } from "@/shared/types";
+import {
+  CURRENT_SPARK_LEVEL,
+  getSparkLevelName,
+  SparkCharacter,
+} from "@/components/character/spark-character";
 
 const routines = [
   { label: "축구", icon: Trophy },
@@ -90,10 +95,11 @@ export default function HomePage() {
             <h2 className="mt-1.5 text-xl font-black leading-none">{health.streakDays || 8}일째 도전 중</h2>
             <p className="mt-1.5 text-[11px] font-bold text-black/62">오늘 루틴도 거의 완료했어요.</p>
           </div>
-          <div className="grid size-16 shrink-0 place-items-center rounded-full bg-black text-center text-[10px] font-black leading-tight text-spark-lime">
-            운동 Lv
-            <br />
-            상승중
+          <div className="relative flex w-[78px] shrink-0 flex-col items-center">
+            <SparkCharacter level={CURRENT_SPARK_LEVEL} size={70} priority />
+            <span className="-mt-1 rounded-full bg-black px-2 py-1 text-[9px] font-black text-spark-lime">
+              {getSparkLevelName(CURRENT_SPARK_LEVEL)}
+            </span>
           </div>
         </div>
         <div className="mt-3 grid grid-cols-2 gap-2">

@@ -291,7 +291,7 @@ export function GroupsClient({
   };
 
   return (
-    <main className="relative h-full min-h-[700px] overflow-hidden bg-[#111113] text-white">
+    <main className="relative h-full min-h-0 overflow-hidden bg-[#111113] text-white">
       <MapBackdrop offset={mapOffset} />
 
       <section className="absolute inset-x-0 top-0 z-20 px-3 pt-3">

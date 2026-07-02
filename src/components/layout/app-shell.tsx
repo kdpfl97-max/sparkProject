@@ -41,12 +41,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       <div
         className={
           isHome
-            ? "min-h-0 flex-1 overflow-y-auto pb-24"
+            ? "scrollbar-none min-h-0 flex-1 overflow-y-auto pb-24"
             : isMapPage
               ? "min-h-0 flex-1 overflow-hidden"
               : isImmersiveWorkout
-                ? "min-h-0 flex-1 overflow-y-auto px-4 pb-4"
-              : "min-h-0 flex-1 overflow-y-auto px-4 pb-24"
+                ? "scrollbar-none min-h-0 flex-1 overflow-y-auto px-4 pb-4"
+              : "scrollbar-none min-h-0 flex-1 overflow-y-auto px-4 pb-24"
         }
       >
         {children}
